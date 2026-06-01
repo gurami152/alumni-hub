@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\User;
+use Znu\Keycloak\Http\Controllers\KeycloakController;
+
 return [
     /*
     |--------------------------------------------------------------------------
@@ -14,7 +17,7 @@ return [
     | Example of custom controller:
     | 'controller' => \App\Http\Controllers\Auth\CustomKeycloakController::class,
     */
-    'controller' => \Znu\Keycloak\Http\Controllers\KeycloakController::class,
+    'controller' => KeycloakController::class,
 
     /*|------------------------------------------------------------------------
     | Default Role
@@ -31,7 +34,7 @@ return [
     | authenticated users.
     |*/
     'user' => [
-        'model' => env('KEYCLOAK_USER_MODEL', \App\Models\User::class),
+        'model' => env('KEYCLOAK_USER_MODEL', User::class),
         'table_name' => env('KEYCLOAK_USER_TABLE', 'users'),
     ],
 ];
