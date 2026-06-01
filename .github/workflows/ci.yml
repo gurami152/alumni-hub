@@ -22,6 +22,8 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
+      env:
+        COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GH_PAT }}"}}'
 
     - name: Check code formatting (Laravel Pint)
       run: vendor/bin/pint --test
