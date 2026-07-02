@@ -30,7 +30,6 @@
         "nunomaduro/collision": "^8.9.3",
         "pestphp/pest": "*",
         "pestphp/pest-plugin-arch": "*",
-        "phpunit/phpunit": "^12.5.23",
         "rector/rector": "*"
     },
     "repositories": [
