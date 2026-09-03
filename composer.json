@@ -12,6 +12,7 @@
         "php": "^8.3",
         "inertiajs/inertia-laravel": "^3.0",
         "isctznu/keycloak-setup": "dev-master@dev",
+        "isctznu/uni360-core": "dev-main",
         "laravel/chisel": "^0.1.0",
         "laravel/fortify": "^1.37.2",
         "laravel/framework": "^13.7",
@@ -32,12 +33,16 @@
         "pestphp/pest-plugin-arch": "*",
         "rector/rector": "*"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "uni360-core": {
+            "type": "vcs",
+            "url": "https://github.com/IsctZNU/uni360-core"
+        },
+        "0": {
             "type": "vcs",
             "url": "https://github.com/isctznu/keycloak-setup"
         }
-    ],
+    },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
