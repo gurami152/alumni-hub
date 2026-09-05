@@ -8,20 +8,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | This file is for storing the credentials for third party services such
-    | as Mailgun, Postmark, AWS and more. This file provides the de facto
+    | as Resend, Postmark, AWS, and more. This file provides the de facto
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
     */
-    'keycloak' => [
-        'client_id' => env('KEYCLOAK_CLIENT_ID'),
-        'client_secret' => env('KEYCLOAK_CLIENT_SECRET'),
-        'redirect' => env('KEYCLOAK_REDIRECT_URI'),
-        'base_url' => env('KEYCLOAK_BASE_URL'),
-        'post_logout_url' => env('KEYCLOAK_POST_LOGOUT_URL'),
-        'post_login_url' => env('KEYCLOAK_POST_LOGIN_URL'),
-        'realm' => env('KEYCLOAK_REALM'),
-    ],
 
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),

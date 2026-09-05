@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/vue-starter-kit",
+    "name": "laravel/blank-vue-starter-kit",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -10,38 +10,32 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "inertiajs/inertia-laravel": "^2.0",
-        "isctznu/keycloak-setup": "dev-master@dev",
-        "znu/core": "dev-main",
-        "laravel/chisel": "^0.1.0",
-        "laravel/fortify": "^1.37.2",
-        "laravel/framework": "^13.7",
+        "inertiajs/inertia-laravel": "^3.0",
+        "laravel/framework": "^13.17",
         "laravel/tinker": "^3.0",
-        "laravel/wayfinder": "^0.1.14",
-        "sentry/sentry-laravel": "^4.25"
+        "laravel/wayfinder": "^0.1.14"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24",
-        "larastan/larastan": "*",
+        "larastan/larastan": "^3.9",
         "laravel/pail": "^1.2.5",
         "laravel/pao": "^1.0.6",
         "laravel/pint": "^1.27",
         "laravel/sail": "^1.53",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.9.3",
-        "pestphp/pest": "*",
-        "pestphp/pest-plugin-arch": "*",
-        "rector/rector": "*"
+        "pestphp/pest": "^4.7",
+        "pestphp/pest-plugin-laravel": "^4.1"
     },
-    "repositories": {
+    "repositories": {    
         "uni360-core": {
             "type": "vcs",
             "url": "https://github.com/IsctZNU/uni360-core"
-        },
-        "0": {
-            "type": "vcs",
-            "url": "https://github.com/isctznu/keycloak-setup"
-        }
+        },   
+        "0": {    
+            "type": "vcs",    
+            "url": "https://github.com/isctznu/keycloak-setup"    
+        }    
     },
     "autoload": {
         "psr-4": {
@@ -66,7 +60,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"npm run dev\" --names='server,queue,vite'"
+            "@php artisan dev"
         ],
         "lint": [
             "pint --parallel"
@@ -76,14 +70,17 @@
         ],
         "ci:check": [
             "Composer\\Config::disableProcessTimeout",
-            "npm run lint:check",
-            "npm run format:check",
+            "npm run check",
             "npm run types:check",
             "@test"
+        ],
+        "types:check": [
+            "phpstan analyse"
         ],
         "test": [
             "@php artisan config:clear --ansi",
             "@lint:check",
+            "@types:check",
             "@php artisan test"
         ],
         "post-autoload-dump": [
@@ -107,10 +104,7 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": [],
-            "installer": {
-                "post-create-project": []
-            }
+            "dont-discover": []
         }
     },
     "config": {
@@ -122,6 +116,5 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "minimum-stability": "stable"
 }

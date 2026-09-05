@@ -5,11 +5,8 @@ namespace App\Providers;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
-use SocialiteProviders\Keycloak\Provider;
-use SocialiteProviders\Manager\SocialiteWasCalled;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,13 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
-
-        Event::listen(
-            SocialiteWasCalled::class,
-            function (SocialiteWasCalled $event) {
-                $event->extendSocialite('keycloak', Provider::class);
-            }
-        );
     }
 
     /**
