@@ -34,5 +34,13 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
-
+    'keycloak' => [
+        'client_id' => env('KEYCLOAK_CLIENT_ID'),
+        'client_secret' => env('KEYCLOAK_CLIENT_SECRET'),
+        'redirect' => env('KEYCLOAK_REDIRECT_URI'),
+        'base_url' => env('KEYCLOAK_BASE_URL'),
+        'post_logout_url' => env('KEYCLOAK_POST_LOGOUT_URL'),
+        'post_login_url' => env('KEYCLOAK_POST_LOGIN_URL'),
+        'realms' => env('KEYCLOAK_REALM'),
+    ],
 ];
