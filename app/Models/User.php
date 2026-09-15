@@ -26,7 +26,7 @@ use Illuminate\Support\Carbon;
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, \Spatie\Permission\Traits\HasRoles;
 
     /**
      * Get the attributes that should be cast.

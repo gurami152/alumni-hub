@@ -1,0 +1,20 @@
+{
+    "name": "znu/module-alumni",
+    "description": "ZNU 360 Alumni Module",
+    "type": "library",
+    "require": {
+        "php": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Znu\\ModuleAlumni\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Znu\\ModuleAlumni\\Providers\\AlumniServiceProvider"
+            ]
+        }
+    }
+}

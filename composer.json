@@ -43,12 +43,16 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Znu\\ModuleAlumni\\": "packages/module-alumni/src/",
+            "Znu\\ModuleAlumni\\Database\\Factories\\": "packages/module-alumni/database/factories/",
+            "Znu\\ModuleAlumni\\Database\\Seeders\\": "packages/module-alumni/database/seeders/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Znu\\ModuleAlumni\\Tests\\": "packages/module-alumni/tests/"
         }
     },
     "scripts": {
